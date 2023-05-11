@@ -1,0 +1,32 @@
+\c skypro
+
+CREATE TABLE employee(
+
+id BIGSERIAL, NOT NULL, PRIMARY KEY,
+first_name VARCHAR(50), NOT NULL,
+last_name VARCHAR(50), NOT NULL,
+gender VARCHAR(6), NOT NULL,
+age INT, NOT NULL
+);
+
+SELECT * FROM employee;
+
+INSERT INTO employee (
+first_name, last_name, gender, age)
+VALUES
+('Alex','Alexov','Man',23),
+('Alesha','Popov','Man',33),
+('Misha','Bobov','Man',43);
+
+SELECT * FROM employee;
+
+UPDATE employee SET
+first_name =  'Vova', last_name = 'Vovichev', gender = 'Man', age = 18
+WHERE id = 1;
+
+SELECT * FROM employee;
+
+DELETE FROM employee
+WHERE id = 2;
+
+SELECT * FROM employee;
