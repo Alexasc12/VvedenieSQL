@@ -1,0 +1,53 @@
+DELETE FROM employee
+WHERE id = 2;
+
+SELECT * FROM employee;
+
+INSERT INTO employee (
+first_name, last_name, gender, age)
+VALUES
+('Tata','Alegov','Man',73),
+('Halesha','Dopov','Man',13),
+('Loisha','Bobova','Man',53);
+
+SELECT * FROM employee;
+
+
+SELECT first_name AS имя,
+last_name AS фамилия
+from employee ;
+
+select * from employee
+where  age < 30 or age > 50;
+
+select * from employee
+where  age > 30 and age < 50;
+
+select last_name
+from employee
+ORDER BY last_name  DESC;
+
+select * from employee
+where length(first_name) >4;
+
+update employee
+set first_name = 'Tata'
+where id = 1;
+
+update employee
+set first_name = 'Loisha'
+where id = 3;
+
+select * from employee;
+
+SELECT first_name,
+SUM(age)
+FROM employee GROUP BY first_name;
+
+select first_name, age
+from employee where age=(select min(age) from employee);
+
+select first_name, max(age)
+from employee
+group by first_name
+having count(first_name)>1 order by 2;
